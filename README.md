@@ -28,14 +28,14 @@ Instalación y ejecución
 1. *Clonar el repositorio*
 - bash
 
-# Verifica que el archivo README.md ya exista en la carpeta
+Verifica que el archivo README.md ya exista en la carpeta:
 dir README.md   # (en PowerShell) o ls README.md (en bash)
 
-# Agregar el README.md al control de versiones
+Agregar el README.md al control de versiones:
 git add README.md
 
-# Crear un commit con el archivo
+Crear un commit con el archivo:
 git commit -m "Agregando README con documentación del proyecto"
 
-# Subir cambios al repositorio remoto
+Subir cambios al repositorio remoto:
 git push
