@@ -34,7 +34,9 @@ Limitaciones de los datos
 - Los resultados dependen de la calidad y cobertura de los archivos `BCM.csv` y `pro212.parquet`.  
 - Los valores de recaudo pueden estar sujetos a errores de registro o diferencias en la metodología de recolección.  
 - La resolución espacial de los datos geográficos puede limitar el nivel de detalle en los mapas.  
-- La aplicación está pensada como herramienta exploratoria; no sustituye análisis estadísticos más profundos.  
+- La aplicación está pensada como herramienta exploratoria; no sustituye análisis estadísticos más profundos.
+
+URL de la app: https://proyecto212.streamlit.app/
 
 
 
