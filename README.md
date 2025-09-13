@@ -3,36 +3,38 @@ Proyecto 2 - Visualización de Recursos Municipales
 Este proyecto es una app desarrollada en 'Python' con 'Streamlit' para visualizar y analizar la distribución de recursos por municipios en Colombia.  
 La app contiene tres municipios, que son: Barranquilla, Cali y Medellin y te permite seleccionar un municipio, ver la composición de sus recursos y explorar la información de manera gráfica e interactiva.
 
-Funcionalidades principales
+Elección de municipios
 
-- Selección de municipios: el usuario elige un municipio desde un desplegable, puedes elegir; Medellin, Barranquilla y Cali.  
-- Distribución general de recursos: gráfico circular que muestra las categorías principales (clas_gen).  
-- Detalle de recursos: gráfico circular con el desglose (clasificacion_ofpuj).  
-- Treemap interactivo: visualización jerárquica de la composición de recursos.  
-- Mapa georreferenciado: despliega el polígono del municipio seleccionado a partir de datos geoespaciales.  
+- Se depuraron tres municipios: Medellin, Cali y Barranquilla
+- La aplicación carga el listado de municipios desde el archivo `BCM.csv`.  
+- El usuario puede elegir un municipio específico mediante un menú desplegable.  
+- Una vez seleccionado, los gráficos y mapas se actualizan automáticamente para reflejar la información de ese municipio.
 
-Archivos del repositorio
+Variables y transformaciones
 
-- app.py -> Script principal de la aplicación.  
-- BCM.csv -> Base de datos en formato CSV con la información de recaudo.  
-- pro212.parquet -> Archivo en formato Parquet con geometrías para los mapas.  
-- requirements.txt -> Dependencias necesarias para ejecutar la app.  
-- README.md -> Documentación del proyecto.  
+Los datos provienen de los archivos `BCM.csv` y `pro212.parquet`:
 
-Tecnologías utilizadas
+Variables principales:
 
-- [Streamlit](https://streamlit.io/) ->Interfaz web interactiva.
-  
-Instalación y ejecución
-- bash
-git config --global user.name "Mauricio Andres Navarro Alonso"
-git config --global user.email "maunavarro019@gmail.com"
+  - `entidad`: nombre del municipio.  
+  - `clas_gen`: clasificación general de los recursos.  
+  - `clasificacion_ofpuj`: clasificación detallada.  
+  - `total_recaudo`: monto total recaudado.  
 
-git init
-git add .
-git commit -m "first commit"
+Transformaciones aplicadas:
 
-git branch -M main
-git remote add origin https://github.com/maunavarro19/PROYECTO2APP.git
-git push -u origin main
+  - Cálculo de participaciones porcentuales (`total_recaudo` relativo al total del municipio).  
+  - Agrupaciones por categorías generales y detalladas.  
+  - Generación de gráficos circulares (pie charts) y un treemap jerárquico para visualizar proporciones.  
+  - Integración con `GeoPandas` para representar la geometría del municipio en un mapa.  
+
+
+Limitaciones de los datos
+
+- Los resultados dependen de la calidad y cobertura de los archivos `BCM.csv` y `pro212.parquet`.  
+- Los valores de recaudo pueden estar sujetos a errores de registro o diferencias en la metodología de recolección.  
+- La resolución espacial de los datos geográficos puede limitar el nivel de detalle en los mapas.  
+- La aplicación está pensada como herramienta exploratoria; no sustituye análisis estadísticos más profundos.  
+
+
 
