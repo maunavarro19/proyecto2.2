@@ -24,18 +24,15 @@ Tecnologías utilizadas
 - [Streamlit](https://streamlit.io/) ->Interfaz web interactiva.
   
 Instalación y ejecución
-
-1. *Clonar el repositorio*
 - bash
+git config --global user.name "Mauricio Andres Navarro Alonso"
+git config --global user.email "maunavarro019@gmail.com"
 
-Verifica que el archivo README.md ya exista en la carpeta:
-dir README.md   # (en PowerShell) o ls README.md (en bash)
+git init
+git add .
+git commit -m "first commit"
 
-Agregar el README.md al control de versiones:
-git add README.md
+git branch -M main
+git remote add origin https://github.com/maunavarro19/PROYECTO2APP.git
+git push -u origin main
 
-Crear un commit con el archivo:
-git commit -m "Agregando README con documentación del proyecto"
-
-Subir cambios al repositorio remoto:
-git push
