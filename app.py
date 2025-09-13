@@ -38,7 +38,7 @@ det = (det / total_det).round(3)
 
 # Pie chart Para el primer gráfico
 
-colores_personalizados = ["#1D2783", "#3a4a52", "#b11738"]  
+colores_personalizados = ["#ffefbd", "#5a464c", "#b5d6b2"]  
 
 fig1 = px.pie(
     names=gen.index,
@@ -63,7 +63,7 @@ fin = (filtro
        .sum()
        .reset_index())
 
-colores_personalizados2 = ["#1D2783", "#3a4a52", "#b11738"]
+colores_personalizados2 = ["#ffefbd", "#5a464c", "#b5d6b2"]
 fig = px.treemap(fin, path=[px.Constant("Total"),
                             "clas_gen",
                             "clasificacion_ofpuj"],
